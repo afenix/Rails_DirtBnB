@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -32,6 +33,13 @@ class ListingsController < ApplicationController
         flash[:alert] = "Something went horribly wrong.  I mean, it's bad, people."
         redirect_to :back
       end
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    flash[:notice] = "You have successfully destroyed your listing.  Bask in the glory of your destructive tendencies."
+    redirect_to '/'
   end
 
 private

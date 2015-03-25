@@ -9,3 +9,12 @@ describe 'editing a listing once it has been posted' do
     expect(page).to have_content "updated"
   end
 end
+
+describe 'deleting a listing once it has been posted' do
+  it 'will delete a question' do
+    listing = FactoryGirl.create(:listing)
+    visit listing_path(listing)
+    click_on 'Delete Posting'
+    expect(page).to have_content "destroyed"
+  end
+end

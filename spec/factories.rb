@@ -16,5 +16,6 @@ FactoryGirl.define do
     rating(3)
     user_id(1)
     listing_id(2)
+    id(1)
   end
 end
