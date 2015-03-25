@@ -1,28 +1,27 @@
-== README
+= DirtBnB App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WORK IN PROGRESS: Once completed, a simple ruby on rails AirBnB app. Allows a user to log in, add a listing, and view reviews to their listing.
 
-Things you may want to cover:
+== Deployment Instructions:
 
-* Ruby version
+* Run Postrges Sever
 
-* System dependencies
+* Clone or download this repository and cd into DirtBnB directory
 
-* Configuration
+<tt> $ rake db:create $ rake db:migrate $ rails server </tt>
 
-* Database creation
+* In your browser visit localhost:3000
 
-* Database initialization
+== Motivation
+To practice building an application using Ruby on Rails, Active Record, and testing with Rspec, Capybara, and FactoryGirl.
 
-* How to run the test suite
+== Bug Reports:
 
-* Services (job queues, cache servers, search engines, etc.)
+This app is a work in progress, as such it has not been fully tested.  However there are no known bugs at this time. Please do contact the author if you uncover any vermin hanging out in the code : a.fenix@icloud.com
 
-* Deployment instructions
+== Author:
+<em>Alister A. Fenix & </em>
+<em>James Maynard</em>
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== License
+Free and OS License. Code for the people by the people.
