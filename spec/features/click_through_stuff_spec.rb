@@ -13,4 +13,11 @@ describe "link navigation" do
     click_on "New Listing"
     expect(page).to have_content "Add a new listing"
   end
+
+  it "will go to the edit listing page when button is clicked" do
+    listing = FactoryGirl.create(:listing)
+    visit listing_path(listing)
+    click_on "Edit"
+    expect(page).to have_content "Edit your question"
+  end
  end
