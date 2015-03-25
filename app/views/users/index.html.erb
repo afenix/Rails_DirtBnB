@@ -1,0 +1,12 @@
+<h1>Welcome to Dirt BnB!</h1>
+
+<% if @listings.any? %>
+  <% @listings.each do |listing| %>
+    <ul>
+      <li><%= link_to listing.title, listing_path(listing) %></li>
+    </ul>
+  <% end %>
+<% else %>
+  <h3>No listings on this site. Yet. </h3>
+  <%= link_to "New Listing", new_listing_path %>
+<% end %>
