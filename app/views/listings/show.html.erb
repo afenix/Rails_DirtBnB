@@ -5,7 +5,7 @@
 <% if @listing.reviews.any? %>
   <% @listing.reviews.each do |review| %>
     <ul>
-      <li><%= review.content %></li>
+      <li><%= review.content %> <%= link_to "Edit", edit_listing_review_path(@listing, review) %></li>
     </ul>
   <% end %>
   <% else %>
@@ -19,7 +19,7 @@
 
 
 <p>
-  <%= link_to "Edit", edit_listing_path(@listing) %>
+  <%= link_to "Edit Listing", edit_listing_path(@listing) %>
 </p>
 
 <%= link_to "Delete Posting", listing_path(@listing),

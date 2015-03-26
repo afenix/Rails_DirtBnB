@@ -17,7 +17,7 @@ describe "link navigation" do
   it "will go to the edit listing page when button is clicked" do
     listing = FactoryGirl.create(:listing)
     visit listing_path(listing)
-    click_on "Edit"
+    click_on "Edit Listing"
     expect(page).to have_content "Edit your question"
   end
  end

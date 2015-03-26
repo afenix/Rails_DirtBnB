@@ -6,8 +6,18 @@ describe "add a review to a listing" do
     visit listing_path(listing)
     fill_in 'Content', :with => 'It was dirty'
     fill_in 'Rating', :with => 3
-    click_on 'Add Review'
+    click_on 'Submit'
     expect(page).to have_content "Your review has been posted."
+  end
+
+  it "will allow user to edit their review" do
+    listing = FactoryGirl.create(:listing)
+    review = FactoryGirl.create(:review)
+    visit listing_path(listing)
+    click_on "Edit"
+    fill_in 'Rating', :with => 2
+    click_on 'Submit'
+    expect(page).to have_content "Your review has been edited."
   end
 end
 
