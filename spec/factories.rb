@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :model do
+
+  end
+
   factory(:user) do
     name('James')
     id(1)

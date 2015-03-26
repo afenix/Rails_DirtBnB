@@ -10,6 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
+gem 'devise'
 
 group :development do
   gem 'byebug'
