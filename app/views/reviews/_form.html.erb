@@ -1,0 +1,7 @@
+<%= form_for [@listing, @review] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+  <%= f.submit "Add Review" %>
+<% end %>

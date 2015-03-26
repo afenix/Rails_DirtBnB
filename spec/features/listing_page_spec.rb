@@ -4,10 +4,9 @@ describe "add a review to a listing" do
   it "will add a review to a listing" do
     listing = FactoryGirl.create(:listing)
     visit listing_path(listing)
-    click_on "Review this listing"
-    fill_in "Content", :with => "Too dirty"
-    fill_in "Rating", :with => "3"
-    click_on "Add review"
+    fill_in 'Content', :with => 'It was dirty'
+    fill_in 'Rating', :with => 3
+    click_on 'Add Review'
     expect(page).to have_content "Your review has been posted."
   end
 end
@@ -17,6 +16,6 @@ describe "relationship on page between listing and reviews" do
     listing = FactoryGirl.create(:listing)
     review = FactoryGirl.create(:review)
     visit listing_path(listing)
-    expect(page).to have_content listing.review.content
+    expect(page).to have_content review.content
   end
 end
