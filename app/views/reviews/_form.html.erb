@@ -1,7 +1,7 @@
 <%= form_for [@listing, @review] do |f| %>
   <%= f.label :content %>
-  <%= f.text_area :content %>
+  <%= f.text_area :content, :class => 'form-control'%>
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
-  <%= f.submit "Submit" %>
+  <%= f.text_field :rating, :class => 'form-control' %>
+  <%= f.submit "Submit", :class => 'btn btn-primary'%>
 <% end %>

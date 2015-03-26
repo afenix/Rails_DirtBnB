@@ -19,6 +19,14 @@ describe "add a review to a listing" do
     click_on 'Submit'
     expect(page).to have_content "Your review has been edited."
   end
+
+  it "will allow a user to delete their review" do
+    listing = FactoryGirl.create(:listing)
+    review = FactoryGirl.create(:review)
+    visit listing_path(listing)
+    click_on "Delete"
+    expect(page).to have_no_content review
+  end
 end
 
 describe "relationship on page between listing and reviews" do
@@ -27,5 +35,11 @@ describe "relationship on page between listing and reviews" do
     review = FactoryGirl.create(:review)
     visit listing_path(listing)
     expect(page).to have_content review.content
+  end
+end
+
+describe "user click-through functionality" do
+  it 'will allow a user to access their profile page' do
+    user = FactoryGirl.create
   end
 end

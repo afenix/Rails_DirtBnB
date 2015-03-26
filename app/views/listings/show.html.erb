@@ -5,7 +5,7 @@
 <% if @listing.reviews.any? %>
   <% @listing.reviews.each do |review| %>
     <ul>
-      <li><%= review.content %> <%= link_to "Edit", edit_listing_review_path(@listing, review) %></li>
+      <li><%= review.content %> <%= link_to "Edit", edit_listing_review_path(@listing, review), :class => 'btn btn-warning' %>, <%= link_to "Delete", listing_review_path(@listing, review), :class => 'btn btn-danger'%></li>
     </ul>
   <% end %>
   <% else %>
@@ -22,8 +22,14 @@
   <%= link_to "Edit Listing", edit_listing_path(@listing) %>
 </p>
 
-<%= link_to "Delete Posting", listing_path(@listing),
-                              :data => {
-                                        :confirm => "You sure?",
-                                        :method => "delete"
-                              } %>
+<p>
+  <%= link_to "Delete Posting", listing_path(@listing),
+  :data => {
+    :confirm => "You sure?",
+    :method => "delete"
+    } %>
+</p>
+
+<p>
+  <%= link_to "Back", root_path, :class => 'btn btn-info btn-sm' %>
+</p>
