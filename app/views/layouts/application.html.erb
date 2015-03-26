@@ -7,21 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">DirtBnB</a>
-      </div>
-    </div>
-  </nav>
 
   <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <ul class="nav navbar-nav navbar-left">
+        <a class="navbar-brand" href="/">DirtBnB</a>
+      </ul>
+
+      <ul class="nav navbar-nav navbar pull-right">
+        <li><%= link_to "New Listing", new_listing_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+        <li> <%= link_to "Sign in", new_user_session_path %> </li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <% if user_signed_in? %>
+    <p class="right-align">Logged in as <%= current_user.email %></p>
+    <% end %>
+
 
     <%= flash[:notice] %>
     <%= flash[:alert] %>

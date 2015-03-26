@@ -3,4 +3,10 @@ class UsersController < ApplicationController
     @listings = Listing.all()
   end
 
+  def show
+    
+  end
+
+
+
 end
